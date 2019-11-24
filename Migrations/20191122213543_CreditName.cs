@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MovieQuery.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class CreditName : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,7 +14,8 @@ namespace MovieQuery.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FirstName = table.Column<string>(nullable: true),
-                    LastName = table.Column<string>(nullable: true)
+                    LastName = table.Column<string>(nullable: true),
+                    CreditName = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

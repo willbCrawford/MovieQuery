@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace MovieQuery.Models
 {
-    public class MovieInformationViewModel
+    public class MovieCreate
     {
         public Movie Movie { get; set; }
-        public List<Credit> Credits { get; set; }
-        public List<Platform> Platforms { get; set; }
+        public List<Credit> Credit { get; set; }
+        public List<Platform> Platform { get; set; }
     }
 }

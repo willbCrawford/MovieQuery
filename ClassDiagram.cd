@@ -1,116 +1,132 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
-  <Class Name="MovieQuery.Program">
-    <Position X="4" Y="3.25" Width="1.5" />
+  <Class Name="MovieQuery.Data.MQDatabaseContext">
+    <Position X="2.75" Y="2.5" Width="1.75" />
+    <AssociationLine Name="MoviePlatforms" Type="Microsoft.EntityFrameworkCore.DbSet&lt;TEntity&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.5" Y="3.978" />
+        <Point X="4.875" Y="3.978" />
+        <Point X="4.875" Y="5.125" />
+        <Point X="7" Y="5.125" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="MoviePlatform" Type="Microsoft.EntityFrameworkCore.DbSet&lt;TEntity&gt;" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.5" Y="3.312" />
+        <Point X="6.175" Y="3.312" />
+        <Point X="6.175" Y="3.625" />
+        <Point X="7" Y="3.625" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="MovieCredits" Type="Microsoft.EntityFrameworkCore.DbSet&lt;TEntity&gt;" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.5" Y="3.448" />
+        <Point X="5.325" Y="3.448" />
+        <Point X="5.325" Y="4.021" />
+        <Point X="6.728" Y="4.021" />
+        <Point X="6.728" Y="4" />
+        <Point X="7" Y="4" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="MovieCredit" Type="Microsoft.EntityFrameworkCore.DbSet&lt;TEntity&gt;" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.5" Y="2.938" />
+        <Point X="4.5" Y="2.75" />
+        <Point X="7" Y="2.75" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Credits" Type="Microsoft.EntityFrameworkCore.DbSet&lt;TEntity&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="4.5" Y="3.188" />
+        <Point X="7" Y="3.188" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Platforms" Type="Microsoft.EntityFrameworkCore.DbSet&lt;TEntity&gt;" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.5" Y="3.713" />
+        <Point X="5.167" Y="3.713" />
+        <Point X="5.167" Y="4.562" />
+        <Point X="7" Y="4.562" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Movies" Type="Microsoft.EntityFrameworkCore.DbSet&lt;TEntity&gt;" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4" Y="2.5" />
+        <Point X="4" Y="2.335" />
+        <Point X="5.406" Y="2.335" />
+        <Point X="5.406" Y="2.208" />
+        <Point X="6.826" Y="2.208" />
+        <Point X="6.826" Y="2.187" />
+        <Point X="7" Y="2.187" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
-      <FileName>Program.cs</FileName>
+      <HashCode>gAAAAAEAAAAAEAAAAAAAAAAAEAAAAAAACAABAAAIAAA=</HashCode>
+      <FileName>Data\MQDatabaseContext.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MoviePlatforms" />
+      <Property Name="MoviePlatform" />
+      <Property Name="MovieCredits" />
+      <Property Name="MovieCredit" />
+      <Property Name="Credits" />
+      <Property Name="Platforms" />
+      <Property Name="Movies" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MovieQuery.Models.Credit" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAg=</HashCode>
+      <FileName>Models\Credit.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MovieQuery.Startup">
-    <Position X="2.25" Y="3.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAgAAACAAAAAA=</HashCode>
-      <FileName>Startup.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MovieQuery.Models.Movie">
-    <Position X="4" Y="0.5" Width="1.5" />
+  <Class Name="MovieQuery.Models.Movie" Collapsed="true">
+    <Position X="0.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAEAAAAIAEAAAAIAAAAAAAAAAAEAAAABAAAAAAA=</HashCode>
       <FileName>Models\Movie.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MovieQuery.Models.MovieCredit">
-    <Position X="5.75" Y="0.5" Width="1.5" />
+  <Class Name="MovieQuery.Models.MovieCredit" Collapsed="true">
+    <Position X="0.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAEAABAAAAAAAAAQAAAAAAAAAAAAAgAAA=</HashCode>
       <FileName>Models\MovieCredit.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MovieQuery.Models.MovieGenreViewModel">
-    <Position X="9.75" Y="0.5" Width="2" />
+    <Position X="10.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAEAAAAAIAAAAAAAAAAAAAAAAABCAAAAA=</HashCode>
       <FileName>Models\MovieGenreViewModel.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MovieQuery.Models.MovieInformationViewModel">
-    <Position X="12" Y="0.5" Width="2.25" />
+  <Class Name="MovieQuery.Models.MovieInformationViewModel" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
       <FileName>Models\MovieInformationViewModel.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MovieQuery.Models.MoviePlatform">
-    <Position X="0.5" Y="2.5" Width="1.5" />
+  <Class Name="MovieQuery.Models.MoviePlatform" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAEAAAAAAAAAIAAQAAAAAACAAAAAAAAAA=</HashCode>
       <FileName>Models\MoviePlatform.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MovieQuery.Models.Platform">
-    <Position X="4" Y="4.75" Width="1.5" />
+  <Class Name="MovieQuery.Models.Platform" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAEAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Platform.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MovieQuery.Models.SeedData">
-    <Position X="0.5" Y="4.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\SeedData.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MovieQuery.Models.Credit">
-    <Position X="0.5" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAACAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAg=</HashCode>
-      <FileName>Models\Credit.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MovieQuery.Controllers.MoviesController">
-    <Position X="5.75" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAABBACAAAAAAAAAIAEBBEACAAEAAAAAAAA=</HashCode>
-      <FileName>Controllers\MoviesController.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MovieQuery.Controllers.CreditsController">
-    <Position X="2.25" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAABAAAABBACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
-      <FileName>Controllers\CreditsController.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MovieQuery.Controllers.MovieCreditsController">
-    <Position X="7.5" Y="0.5" Width="2" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAABBACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
-      <FileName>Controllers\MovieCreditsController.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MovieQuery.Controllers.MoviePlatformsController">
-    <Position X="12" Y="2.25" Width="2" />
-    <TypeIdentifier>
-      <HashCode>AIAAAAAAAAABBACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
-      <FileName>Controllers\MoviePlatformsController.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MovieQuery.Controllers.PlatformsController">
-    <Position X="7.5" Y="3.75" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAABBACAAAAAAAAAAAEAAkACAAEAAAAAAAA=</HashCode>
-      <FileName>Controllers\PlatformsController.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MovieQuery.Data.MQDatabaseContext">
-    <Position X="9.75" Y="2.5" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>gAAAAAEAAAAAEAAAAAAAAAAAEAAAAAAACAABAAAIAAA=</HashCode>
-      <FileName>Data\MQDatabaseContext.cs</FileName>
-    </TypeIdentifier>
+  <Class Name="Microsoft.EntityFrameworkCore.DbSet&lt;TEntity&gt;">
+    <Position X="7" Y="1.5" Width="3" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

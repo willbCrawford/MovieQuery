@@ -49,8 +49,8 @@ namespace MovieQuery.Controllers
         // GET: MoviePlatforms/Create
         public IActionResult Create()
         {
-            ViewData["MovieId"] = new SelectList(_context.Movies, "Id", "Genre");
-            ViewData["PlatformId"] = new SelectList(_context.Platforms, "Id", "Id");
+            ViewData["MovieId"] = new SelectList(_context.Movies, "Id", "Title");
+            ViewData["PlatformId"] = new SelectList(_context.Platforms, "Id", "Title");
             return View();
         }
 
@@ -67,8 +67,8 @@ namespace MovieQuery.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["MovieId"] = new SelectList(_context.Movies, "Id", "Genre", moviePlatform.MovieId);
-            ViewData["PlatformId"] = new SelectList(_context.Platforms, "Id", "Id", moviePlatform.PlatformId);
+            ViewData["MovieId"] = new SelectList(_context.Movies, "Id", "Title", moviePlatform.MovieId);
+            ViewData["PlatformId"] = new SelectList(_context.Platforms, "Id", "Title", moviePlatform.PlatformId);
             return View(moviePlatform);
         }
 
@@ -85,8 +85,8 @@ namespace MovieQuery.Controllers
             {
                 return NotFound();
             }
-            ViewData["MovieId"] = new SelectList(_context.Movies, "Id", "Genre", moviePlatform.MovieId);
-            ViewData["PlatformId"] = new SelectList(_context.Platforms, "Id", "Id", moviePlatform.PlatformId);
+            ViewData["MovieId"] = new SelectList(_context.Movies, "Id", "Title", moviePlatform.MovieId);
+            ViewData["PlatformId"] = new SelectList(_context.Platforms, "Id", "Title", moviePlatform.PlatformId);
             return View(moviePlatform);
         }
 
@@ -122,8 +122,8 @@ namespace MovieQuery.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["MovieId"] = new SelectList(_context.Movies, "Id", "Genre", moviePlatform.MovieId);
-            ViewData["PlatformId"] = new SelectList(_context.Platforms, "Id", "Id", moviePlatform.PlatformId);
+            ViewData["MovieId"] = new SelectList(_context.Movies, "Id", "Title", moviePlatform.MovieId);
+            ViewData["PlatformId"] = new SelectList(_context.Platforms, "Id", "Title", moviePlatform.PlatformId);
             return View(moviePlatform);
         }
 

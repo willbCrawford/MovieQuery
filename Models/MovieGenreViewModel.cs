@@ -10,7 +10,9 @@ namespace MovieQuery.Models
     {
         public List<Movie> Movies { get; set; }
         public SelectList Genres { get; set; }
+        public SelectList Platforms { get; set; }
         public string MovieGenre { get; set; }
         public string SearchString { get; set; }
+        public string PlatformString { get; set; }
     }
 }

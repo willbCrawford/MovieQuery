@@ -24,7 +24,7 @@ namespace MovieQuery.Controllers
         }
 
         // GET: Movies
-        public async Task<IActionResult> Index(string movieGenre, string searchString)
+        public async Task<IActionResult> Index(string movieGenre, string searchString, string platformString)
         {
             IQueryable<string> genreQuery = from m in _context.Movies
                                             orderby m.Genre
@@ -33,17 +33,36 @@ namespace MovieQuery.Controllers
             var movies = from m in _context.Movies
                          select m;
 
+            var platforms = from m in _context.MoviePlatforms 
+                            orderby m.Platform.Title 
+                            select m.Platform.Title;
+
+            var platformQuery = from m in _context.MoviePlatforms 
+                                select m;
+            if (!string.IsNullOrEmpty(platformString))
+            {
+                platformQuery = platformQuery.Where(x => x.Platform.Title.Contains(platformString));
+
+                movies = from m in _context.Movies
+                             from p in platformQuery
+                             where m.Id == p.MovieId
+                             select m;
+            }
+
             if (!string.IsNullOrEmpty(searchString))
+            {
                 movies = movies.Where(s => s.Title.Contains(searchString));
+            }
 
             if (!string.IsNullOrEmpty(movieGenre))
+            {
                 movies = movies.Where(x => x.Genre == movieGenre);
-
-            //_logger.LogInformation("[MoviesController]Movies after queries {}, {}: {}", movieGenre == null ? "null" : movieGenre, searchString == null ? "null" : searchString, movies.ToList().ToString());
+            }
 
             var movieGenreVM = new MovieGenreViewModel
             {
                 Genres = new SelectList(await genreQuery.Distinct().ToListAsync()),
+                Platforms = new SelectList(await platforms.Distinct().ToListAsync()),
                 Movies = await movies.ToListAsync()
             };
 
@@ -104,7 +123,12 @@ namespace MovieQuery.Controllers
             {
                 return NotFound();
             }
-            return View(movie);
+
+            return View(new MovieCreditPlatfromEdit
+            {
+                Movie = movie,
+                Credits = await _context.Credits.ToListAsync()
+            }) ;
         }
 
         // POST: Movies/Edit/5
@@ -139,6 +163,7 @@ namespace MovieQuery.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+
             return View(movie);
         }
 
@@ -173,20 +198,19 @@ namespace MovieQuery.Controllers
 
         public async Task<IActionResult> View(int id)
         {
-            var moviecredits = _context.MovieCredits.Where(mc => mc.MovieId == id);
-
-            var movie = await _context.MovieCredits.FindAsync(id);
+            var moviecredits = _context.Movies.Where(mc => mc.Id == id);
 
             var credits = from c in _context.MovieCredits
+                          where c.MovieId == id
                           select c.Credit;
 
             var platforms = from p in _context.MoviePlatforms
                             where p.MovieId == id
                             select p.Platform;
 
-            var movieInformationViewModel = new MovieInformationViewModel
+            var movieInformationViewModel = new MovieViewViewModel
             {
-                Movie = movie.Movie,
+                Movie = moviecredits.FirstOrDefault(),
                 Credits = await credits.ToListAsync(),
                 Platforms = await platforms.ToListAsync()
             };

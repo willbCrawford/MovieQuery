@@ -58,56 +58,78 @@ namespace MovieQuery.Models
                     ReleaseDate = DateTime.Parse("1976-2-9"),
                     Genre = "Drama",
                     Rating = "R"
+                },
+                new Movie
+                {
+                    Title = "Superbad",
+                    ReleaseDate = DateTime.Parse("2007-8-17"),
+                    Genre = "Comedy",
+                    Rating = "R"
                 }
             );
 
             context.Credits.AddRange(
                 new Credit
                 {
+                    CreditName = "Director",
                     FirstName = "Rob",
                     LastName = "Reidner"
                 },
 
                 new Credit
                 {
+                    CreditName = "Writer",
                     FirstName = "Nora",
                     LastName = "Ephnor"
                 },
 
                 new Credit
                 {
+                    CreditName = "Director",
                     FirstName = "Ivan",
                     LastName = "Reitman"
                 },
 
                 new Credit
                 {
+                    CreditName = "Writer",
                     FirstName = "Dan",
                     LastName = "Aykroyd"
                 },
 
                 new Credit
                 {
+                    CreditName = "Writer",
                     FirstName = "Harold",
                     LastName = "Ramis"
                 },
 
                 new Credit
                 {
+                    CreditName = "Director",
                     FirstName = "Howard",
                     LastName = "Hawks"
                 },
 
                 new Credit
                 {
+                    CreditName = "Writer",
                     FirstName = "Jules",
                     LastName = "Furthman"
                 },
 
                 new Credit
                 {
+                    CreditName = "Writer",
                     FirstName = "Martin",
                     LastName = "Scorcese"
+                },
+
+                new Credit
+                {
+                    CreditName = "Director",
+                    FirstName = "Greg",
+                    LastName = "Mottola"
                 }
             );
 
@@ -128,15 +150,95 @@ namespace MovieQuery.Models
                 }
             );
 
-            /*
-            context.MovieCredit.AddRange(
-                new MovieCredit
-                {
-                    MovieId = 5,
-                    CreditId = 8
-                }
-            );
-            */
+            
+            //context.MovieCredit.AddRange(
+            //    new MovieCredit
+            //    {
+            //        MovieId = 1,
+            //        CreditId = 1
+            //    },
+
+            //    new MovieCredit
+            //    {
+            //        MovieId = 1,
+            //        CreditId = 2
+            //    },
+
+            //    new MovieCredit
+            //    {
+            //        MovieId = 2,
+            //        CreditId = 3
+            //    },
+
+            //    new MovieCredit
+            //    {
+            //        MovieId = 2,
+            //        CreditId = 4
+            //    },
+
+            //    new MovieCredit
+            //    {
+            //        MovieId = 2,
+            //        CreditId = 5
+            //    },
+
+            //    new MovieCredit
+            //    {
+            //        MovieId = 3,
+            //        CreditId = 3
+            //    },
+
+            //    new MovieCredit
+            //    {
+            //        MovieId = 3,
+            //        CreditId = 4
+            //    },
+
+            //    new MovieCredit
+            //    {
+            //        MovieId = 3,
+            //        CreditId = 5
+            //    },
+
+            //    new MovieCredit
+            //    {
+            //        MovieId = 4,
+            //        CreditId = 6
+
+            //    },
+
+            //    new MovieCredit
+            //    {
+            //        MovieId = 4,
+            //        CreditId = 7,
+            //    },
+
+            //    new MovieCredit
+            //    {
+            //        MovieId = 5,
+            //        CreditId = 8
+            //    },
+
+            //    new MovieCredit
+            //    {
+            //        MovieId = 6,
+            //        CreditId = 9
+            //    }
+            //);
+
+            //context.MoviePlatforms.AddRange(
+            //    new MoviePlatform
+            //    {
+            //        MovieId = 5,
+            //        PlatformId = 1
+            //    },
+
+            //    new MoviePlatform
+            //    {
+            //        MovieId = 6,
+            //        PlatformId = 1
+            //    }
+            //);
 
             context.SaveChanges();
         }

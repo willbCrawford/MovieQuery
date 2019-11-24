@@ -26,6 +26,9 @@ namespace MovieQuery.Models
         [Required]
         [StringLength(5)]
         public string Rating { get; set; }
+        [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
+        [StringLength(500)]
+        public string Description { get; set; }
         public List<MovieCredit> MovieCredits { get; set; }
         public List<MoviePlatform> MoviePlatforms { get; set; }
     }

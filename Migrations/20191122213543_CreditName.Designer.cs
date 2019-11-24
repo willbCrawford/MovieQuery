@@ -10,8 +10,8 @@ using MovieQuery.Data;
 namespace MovieQuery.Migrations
 {
     [DbContext(typeof(MQDatabaseContext))]
-    [Migration("20191018041249_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20191122213543_CreditName")]
+    partial class CreditName
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,6 +27,9 @@ namespace MovieQuery.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CreditName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
